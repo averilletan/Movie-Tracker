@@ -1,12 +1,24 @@
 package com.movietracker.movie_tracker;
+
 //Handles requests coming into your application.
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestParam;
+//"Someone requested /api/movies. What should I run?"
 
-@RestController //tells Spring Boot that this class is going to handle web request and return responses
+@RestController // tells Spring Boot that this class is going to handle web request and return
+                // responses
+
 public class MovieController {
-    @GetMapping("/api/movies") //when someone sends a GET request to the /api/movies endpoint, this method will be called
-    public String getMovies() {
-        return "Movie Tracker API is working!"; //run this method and send this text back
-    }   
+    private final TmdbService tmdbService;
+
+    public MovieController(TmdbService tmdbService){
+        this.tmdbService = tmdbService;
+    } //Create MovieController then give me the TmdbService I NEED
+
+    @GetMapping("/api/search/movies") // when someone sends a GET request to the /api/movies endpoint, this method will be called
+    
+    public MovieSearchResponse getMovie(@RequestParam String query) {
+        return tmdbService.searchMovie(query); //TmdbService handle the movie, whatever gets back will be return to whoever called /api/movies
+    }
 }
