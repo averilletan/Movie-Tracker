@@ -19,4 +19,11 @@ public class TmdbService {
         .retrieve()
         .body(MovieSearchResponse.class);
     }
+
+    public Movie getMovieDetails(Long movieId){
+        return restClient.get()
+        .uri("/movie/" + movieId)
+        .retrieve().body(Movie.class);
+    }
+
 }

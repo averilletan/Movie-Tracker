@@ -4,6 +4,7 @@ package com.movietracker.movie_tracker;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PathVariable;
 //"Someone requested /api/movies. What should I run?"
 
 @RestController // tells Spring Boot that this class is going to handle web request and return
@@ -20,5 +21,10 @@ public class MovieController {
     
     public MovieSearchResponse getMovie(@RequestParam String query) {
         return tmdbService.searchMovie(query); //TmdbService handle the movie, whatever gets back will be return to whoever called /api/movies
+    }
+
+    @GetMapping("/api/movies/{movieId}")
+    public Movie getMovieDetails(@PathVariable long movieId){
+        return tmdbService.getMovieDetails(movieId);
     }
 }

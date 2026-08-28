@@ -16,12 +16,15 @@ public class Movie {
     //private String genre;
     @JsonProperty("genre_ids")
     private List<Integer> genreIds;
+    private List<Genre> genres;
     @JsonProperty("release_date")
     private LocalDate releaseDate;
     @JsonProperty("vote_average")
     private double rating;    
+    @JsonProperty("poster_path")
+    private String posterPath;
 
-    public Movie(Long id, String title, String description, List<Integer> genreIds, LocalDate releaseDate, double rating){
+    public Movie(Long id, String title, String description, List<Integer> genreIds, List<Genre> genres, LocalDate releaseDate, double rating, String posterPath){
         //this.title: Movie object's field
         //title parameter: value passed to the constructor
         //Take the title that was passed into the constructor and store in Movie's object's title field
@@ -29,8 +32,10 @@ public class Movie {
         this.title = title;
         this.description = description;
         this.genreIds = genreIds;
+        this.genres = genres;
         this.releaseDate = releaseDate;
         this.rating = rating;
+        this.posterPath = posterPath;
     }
 
     public Long getId(){
@@ -55,6 +60,14 @@ public class Movie {
 
     public double getRating(){
         return rating;
+    }
+
+    public String getPosterPath(){
+        return posterPath;
+    }
+
+    public List<Genre> getGenres(){
+        return genres;
     }
 
 }
