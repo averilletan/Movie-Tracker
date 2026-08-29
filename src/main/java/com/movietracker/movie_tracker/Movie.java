@@ -38,6 +38,10 @@ public class Movie {
         this.posterPath = posterPath;
     }
 
+    public Movie(){
+
+    }
+    
     public Long getId(){
         return id;      
     }

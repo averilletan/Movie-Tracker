@@ -15,7 +15,11 @@ public class TmdbService {
 
     public MovieSearchResponse searchMovie(String query){
         return restClient.get()
-        .uri("/search/movie?query=" + query)
+        .uri(uriBuilder -> uriBuilder
+            .path("/search/movie") //endpoint we need
+            .queryParam("query", query) //add query parameter called query, and put what user searched for inside it
+            .build()
+        )
         .retrieve()
         .body(MovieSearchResponse.class);
     }
