@@ -30,4 +30,22 @@ public class TmdbService {
         .retrieve().body(Movie.class);
     }
 
+    public MovieSearchResponse getTrendingMovies(){
+        return restClient.get()
+        .uri("/trending/movie/day")
+        .retrieve()
+        .body(MovieSearchResponse.class);
+    }
+
+    public MovieSearchResponse discoverMoviesByGenre(Integer genreId){
+        return restClient.get()
+        .uri(uriBuilder -> uriBuilder
+            .path("/discover/movie") //endpoint we need
+            .queryParam("with_genrens", genreId) //add query parameter called query, and put what user searched for inside it
+            .build()
+        )
+        .retrieve()
+        .body(MovieSearchResponse.class);
+    }
+
 }

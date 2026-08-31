@@ -1,6 +1,7 @@
 package com.movietracker.movie_tracker;
 
 import org.springframework.stereotype.Service;
+import java.util.List;
 
 @Service
 public class UserMovieService {
@@ -32,5 +33,9 @@ public class UserMovieService {
 
     public void deleteMovie(Long movieId){
         userMovieRepository.deleteById(movieId);
+    }
+
+    public List<UserMovie> getAllMovies(){
+        return userMovieRepository.findAll();
     }
 }

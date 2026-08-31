@@ -27,4 +27,9 @@ public class MovieController {
     public Movie getMovieDetails(@PathVariable long movieId){
         return tmdbService.getMovieDetails(movieId);
     }
+
+    @GetMapping("/api/movies/trending")
+    public MovieSearchResponse getTrendingMovies(){
+        return tmdbService.getTrendingMovies();
+    }
 }
