@@ -1,0 +1,465 @@
+/* =========================
+   AveReel — Main Styles
+   ========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fffaf7;
+    color: #4a3028;
+}
+
+
+/* =========================
+   Header
+   ========================= */
+
+/* =========================
+   Header
+   ========================= */
+
+header {
+    padding: 25px 40px;
+    background-color: #fffaf7;
+    border-bottom: 1px solid #f0dcd8;
+}
+
+.top-bar {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    text-align: left;
+}
+
+.brand h1 {
+    font-size: 2rem;
+    margin-bottom: 4px;
+}
+
+.brand p {
+    color: #9b6f67;
+    font-size: 0.85rem;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #6b4840;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #b9786f;
+}
+
+
+/* =========================
+   Main
+   ========================= */
+
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+section h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+
+/* =========================
+   Hero / Search
+   ========================= */
+
+.hero {
+    text-align: center;
+    padding: 60px 20px 35px;
+}
+
+.hero h2 {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-box input {
+    width: 420px;
+    padding: 15px 20px;
+
+    border: 2px solid #e8c9c3;
+    border-radius: 30px;
+
+    outline: none;
+
+    font-size: 1rem;
+    background-color: white;
+}
+
+.search-box input:focus {
+    border-color: #c98f87;
+}
+
+.search-box button {
+    padding: 15px 25px;
+
+    border: none;
+    border-radius: 30px;
+
+    background-color: #d9a6a0;
+    color: white;
+
+    cursor: pointer;
+    font-size: 1rem;
+
+    transition: background-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.search-box button:hover {
+    background-color: #b9786f;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   Movie Container
+   ========================= */
+
+.movie-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px 5px 20px;
+}
+
+.movie-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.movie-container::-webkit-scrollbar-thumb {
+    background-color: #e3bcb6;
+    border-radius: 10px;
+}
+
+
+/* =========================
+   Movie Card
+   ========================= */
+
+.movie-card {
+    flex: 0 0 180px;
+    background-color: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(74, 48, 40, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+}
+
+.movie-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 22px rgba(74, 48, 40, 0.15);
+}
+
+.movie-card img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    display: block;
+}
+
+.movie-info {
+    padding: 12px;
+}
+
+.movie-info h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.movie-info p {
+    color: #8d7068;
+    font-size: 0.85rem;
+}
+
+
+/* =========================
+   Favourite Button
+   ========================= */
+
+.favorite-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    width: 36px;
+    height: 36px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: rgba(255, 255, 255, 0.9);
+
+    cursor: pointer;
+    font-size: 1.1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.favorite-button:hover {
+    transform: scale(1.1);
+}
+
+
+/* =========================
+   Currently Watching
+   ========================= */
+
+#currentlyWatching {
+    min-height: 100px;
+}
+
+#currentlyWatching > p {
+    width: 100%;
+    padding: 35px;
+    text-align: center;
+
+    background-color: #f9e9e6;
+    border-radius: 16px;
+
+    color: #8d7068;
+}
+
+
+/* =========================
+   Movie of the Day
+   ========================= */
+
+.movie-day {
+    text-align: center;
+    padding: 35px 20px;
+    background-color: #f9e9e6;
+    border-radius: 20px;
+}
+
+.movie-day button {
+    padding: 14px 24px;
+
+    border: none;
+    border-radius: 25px;
+
+    background-color: #b9786f;
+    color: white;
+
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.movie-day button:hover {
+    background-color: #9f6259;
+}
+
+#movieOfTheDay {
+    margin-top: 25px;
+}
+
+
+/* =========================
+   Genre Buttons
+   ========================= */
+
+.genre-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.genre-buttons button {
+    padding: 11px 20px;
+
+    border: 1px solid #e3bcb6;
+    border-radius: 25px;
+
+    background-color: white;
+    color: #6b4840;
+
+    cursor: pointer;
+
+    font-size: 0.9rem;
+
+    transition: all 0.2s ease;
+}
+
+.genre-buttons button:hover {
+    background-color: #f3d8d4;
+    border-color: #d9a6a0;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   Footer
+   ========================= */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #9b6f67;
+    font-size: 0.9rem;
+}
+
+
+/* =========================
+   Mobile
+   ========================= */
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .search-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-box input {
+        width: 100%;
+    }
+
+    .search-box button {
+        width: 120px;
+    }
+
+    .movie-card {
+        flex-basis: 150px;
+    }
+
+    .movie-card img {
+        height: 225px;
+    }
+}
+
+/* =========================
+   Movie Cards
+   ========================= */
+
+.movie-card {
+    flex: 0 0 180px;
+
+    background-color: white;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 15px rgba(74, 48, 40, 0.08);
+
+    position: relative;
+
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+
+    cursor: pointer;
+}
+
+.movie-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 10px 22px rgba(74, 48, 40, 0.15);
+}
+
+.movie-card img {
+    width: 100%;
+    height: 270px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.movie-info {
+    padding: 12px;
+}
+
+.movie-info h3 {
+    font-size: 1rem;
+    margin-bottom: 7px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.movie-info p {
+    color: #8d7068;
+    font-size: 0.85rem;
+}
+
+
+/* Favourite button */
+
+.favorite-button {
+    position: absolute;
+
+    top: 10px;
+    right: 10px;
+
+    width: 36px;
+    height: 36px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: rgba(255, 255, 255, 0.9);
+
+    cursor: pointer;
+
+    font-size: 1.1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: transform 0.2s ease;
+}
+
+.favorite-button:hover {
+    transform: scale(1.1);
+}

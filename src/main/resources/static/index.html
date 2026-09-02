@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AveReel — My Little Movie Diary</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="top-bar">
+
+            <div class="brand">
+                <h1>🎞️ AveReel</h1>
+                <p>My Little Movie Diary</p>
+            </div>
+
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Watchlist</a>
+                <a href="#">Favourites</a>
+                <a href="#">My Movies</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <h2>What are we watching today?</h2>
+
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search for a movie...">
+
+                <button id="searchButton">
+                    Search
+                </button>
+            </div>
+        </section>
+
+        <section>
+            <h2>Browse by Genre</h2>
+
+            <div class="genre-buttons">
+                <button>Action</button>
+                <button>Adventure</button>
+                <button>Animation</button>
+                <button>Comedy</button>
+                <button>Drama</button>
+                <button>Fantasy</button>
+                <button>Horror</button>
+                <button>Romance</button>
+            </div>
+        </section>
+
+
+        <section>
+            <h2>Currently Watching</h2>
+
+            <div id="currentlyWatching" class="movie-container">
+                <p>🍿 Nothing here yet!</p>
+            </div>
+        </section>
+
+
+        <section>
+            <h2>Trending Movies</h2>
+
+            <div id="trendingMovies" class="movie-container">
+                <p>Loading movies...</p>
+            </div>
+        </section>
+
+
+        <section>
+            <h2>Recommended For You</h2>
+
+            <div id="recommendedMovies" class="movie-container">
+                <p>Loading recommendations...</p>
+            </div>
+        </section>
+
+
+        <section class="movie-day">
+            <h2>Movie of the Day</h2>
+
+            <button id="movieOfTheDayButton">
+                🎁 Reveal Today's Movie
+            </button>
+
+            <div id="movieOfTheDay"></div>
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Made with ♡ by Ave</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
